@@ -18,6 +18,15 @@ app.get('/home', (req, res)=> {
     });
 });
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT, async () => {
     console.log(`Server Started on Port ${process.env.PORT} !!`);
+
+    try {
+        await mongoose.connect(process.env.DB_URL); // connected to mongo server
+        console.log("Successfully Connected to mongo");
+    } catch (err) {
+        console.log("Not able to connect mongo", err);    
+    }
+
+
 });
