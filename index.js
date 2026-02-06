@@ -17,13 +17,6 @@ app.use(bodyParser.json());
 MovieRoutes(app); //invoking movie routes
 TheatreRoutes(app);// invoking theatre routes
 
-app.get('/home', (req, res)=> {
-    console.log("Hitting /home");
-    return res.json({
-        sucess: true,
-        message:'Fetched /home',
-    });
-});
 
 app.listen(process.env.PORT, async () => {
     console.log(`Server Started on Port ${process.env.PORT} !!`);
@@ -34,6 +27,4 @@ app.listen(process.env.PORT, async () => {
     } catch (err) {
         console.log("Not able to connect mongo", err);    
     }
-
-
 });
