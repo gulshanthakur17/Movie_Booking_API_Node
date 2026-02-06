@@ -7,38 +7,38 @@ const mongoose = require('mongoose');
 const movieSchema = new mongoose.Schema({
     name: {
         type: String,
-        require: true,
+        required: true,
         minLength: 2
     },
     description: {
         type: String,
-        require: true,
+        required: true,
         minLength: 5
     },
     casts: {
         type: [String],
-        require: true
+        required: true
     },
     trailerUrl: {
         type: String,
-        require: true
+        required: true
     },
     language: {
         type: String,
-        require: true,
+        required: true,
         default: "English"
     },
     releaseDate: {
         type: String,
-        require: true
+        required: true
     },
     director: {
         type: String,
-        require: true
+        required: true
     },
     releaseStatus: {
         type: String,
-        require: true,
+        required: true,
         default: "RELEASED"
     },
 }, {timestamps: true});
