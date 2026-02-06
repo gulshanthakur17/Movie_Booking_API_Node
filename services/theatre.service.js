@@ -32,8 +32,33 @@ const deleteTheatre = async (id) => {
         throw error;
     }
 }
+
+/**
+ * 
+ * @param id -> it is the unique _id based on which we will fetch a theatre
+ *  
+ */
+const getTheatre = async (id) => {
+    try {
+        const response = await Theatre.findById(id);
+        if(!response) {
+            //no record found for the given id
+            return {
+                err: "No theatre found for the given id",
+                code: 404
+            }
+        }
+        return response;
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+
+
 module.exports = {
     createTheatre,
     deleteTheatre,
-
+    getTheatre,
 }
