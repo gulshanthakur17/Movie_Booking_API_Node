@@ -48,6 +48,12 @@ const routes = (app) => {
         theatreMiddleware.validateUpdateMoviesRequest,
         theatreController.updateMovies
     );
+
+    //
+    app.get(
+        '/mba/api/v1/theatre/:id/movies',
+        theatreController.getMovies
+    );
 }
 
 module.exports = routes;
