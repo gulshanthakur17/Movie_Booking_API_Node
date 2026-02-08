@@ -3,6 +3,10 @@ const bodyParser = require('body-parser');
 const env = require('dotenv');
 const mongoose = require('mongoose');
 
+
+const MovieRoutes = require('./routes/movie.routes');
+const TheatreRoutes = require('./routes/theatre.routes');
+
 env.config();
 const app = express(); // express app object
 
@@ -10,13 +14,9 @@ const app = express(); // express app object
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.get('/home', (req, res)=> {
-    console.log("Hitting /home");
-    return res.json({
-        sucess: true,
-        message:'Fetched /home',
-    });
-});
+MovieRoutes(app); //invoking movie routes
+TheatreRoutes(app);// invoking theatre routes
+
 
 app.listen(process.env.PORT, async () => {
     console.log(`Server Started on Port ${process.env.PORT} !!`);
@@ -27,6 +27,4 @@ app.listen(process.env.PORT, async () => {
     } catch (err) {
         console.log("Not able to connect mongo", err);    
     }
-
-
 });
