@@ -31,6 +31,13 @@ const createMovie = async (req , res) => {
 
 const deleteMovie = async (req, res) => {
     try {
+<<<<<<< HEAD
+        const response = await movieService.deleteMovie(req.params.id); 
+
+        successResponseBody.data = response;
+        successResponseBody.message = "Successfully Deleted the movie";
+        
+=======
         const response = await movieService.deleteMovie(req.params.id);
 
         if(response.err) {
@@ -40,6 +47,7 @@ const deleteMovie = async (req, res) => {
 
         successResponseBody.data = response;
         successResponseBody.message = "Successfully Deleted the movie";
+>>>>>>> master
         return res.status(200).json(successResponseBody);
     } catch (err) {
         console.log(err);

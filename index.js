@@ -14,6 +14,11 @@ const app = express(); // express app object
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
+<<<<<<< HEAD
+mongoose.set('debug', true);
+
+=======
+>>>>>>> master
 MovieRoutes(app); //invoking movie routes
 TheatreRoutes(app);// invoking theatre routes
 

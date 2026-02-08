@@ -20,7 +20,16 @@ const theatreSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+<<<<<<< HEAD
+    address: String,
+
+    movies: {
+        type: [mongoose.Schema.Types.ObjectId],
+        ref: 'Movie'
+    }
+=======
     address: String
+>>>>>>> master
 
 },  {timestamps: true});
 

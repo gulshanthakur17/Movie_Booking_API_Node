@@ -33,7 +33,38 @@ const validateTheatreCreateRequest = async (req, res, next) => {
     next();// everything is fine move to the next middleware
 }
 
+<<<<<<< HEAD
+const validateUpdateMoviesRequest = async (req, res, next) => {
+    //validation of insert parameter
+    if(req.body.insert == undefined) {
+        errorResponseBody.message = "The insert parameter is missing in the request";
+        return res.status(400).json(errorResponseBody);
+    }
+    // validate moviesIds presence
+    if(!req.body.movieIds) {
+        errorResponseBody.message = "No movies present in the request to be updated in theater";
+        return res.status(400).json(errorResponseBody);
+    }
+    // validate if moviesIds is an array or not
+    if(!(req.body.movieIds instanceof Array)) {
+        errorResponseBody.message = "Expected array of movies but found something else";
+        return res.status(400).json(errorResponseBody);
+    }
+    // validate if moviesIds is empty or not
+    if(req.body.movieIds.length == 0) {
+        errorResponseBody.message = "No movies present in the array provided";
+        return res.status(400).json(errorResponseBody);
+    }
+    // everything is fine
+    next();
+}
 
 module.exports = {
     validateTheatreCreateRequest,
+    validateUpdateMoviesRequest
+=======
+
+module.exports = {
+    validateTheatreCreateRequest,
+>>>>>>> master
 }
