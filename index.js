@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 
 const MovieRoutes = require('./routes/movie.routes');
 const TheatreRoutes = require('./routes/theatre.routes');
+const AuthRoutes = require('./routes/auth.routes');
+const UserRoutes = require('./routes/user.routes');
 
 env.config();
 const app = express(); // express app object
@@ -21,6 +23,8 @@ mongoose.set('debug', true);
 >>>>>>> master
 MovieRoutes(app); //invoking movie routes
 TheatreRoutes(app);// invoking theatre routes
+AuthRoutes(app); // invoking auth routes
+UserRoutes(app); //invoking user routes
 
 
 app.listen(process.env.PORT, async () => {
