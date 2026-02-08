@@ -53,7 +53,11 @@ const getTheatre = async (req, res) => {
 
 const getAllTheatre = async (req , res) => {
     try {
+<<<<<<< HEAD
         const response = await theatreService.getAllTheatre(req.query);
+=======
+        const response = await theatreService.getAllTheatre();
+>>>>>>> master
         successResponseBody.data = response;
         successResponseBody.message = "Successfully fetched all the theatre";
         return res.status(200).json(successResponseBody);
@@ -81,6 +85,7 @@ const update = async (req, res) => {
 }
 
 
+<<<<<<< HEAD
 const updateMovies = async (req, res) => {
     try {
         const response = await theatreService.updateMoviesInTheatres(
@@ -136,13 +141,19 @@ const checkMovie = async (req, res) => {
 }
 
 
+=======
+>>>>>>> master
 module.exports = {
     create,
     destroy,
     getTheatre,
     getAllTheatre,
+<<<<<<< HEAD
     update,
     updateMovies,
     getMovies,
     checkMovie
+=======
+    update
+>>>>>>> master
 }

@@ -33,6 +33,7 @@ const validateTheatreCreateRequest = async (req, res, next) => {
     next();// everything is fine move to the next middleware
 }
 
+<<<<<<< HEAD
 const validateUpdateMoviesRequest = async (req, res, next) => {
     //validation of insert parameter
     if(req.body.insert == undefined) {
@@ -61,4 +62,9 @@ const validateUpdateMoviesRequest = async (req, res, next) => {
 module.exports = {
     validateTheatreCreateRequest,
     validateUpdateMoviesRequest
+=======
+
+module.exports = {
+    validateTheatreCreateRequest,
+>>>>>>> master
 }

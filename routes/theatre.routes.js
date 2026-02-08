@@ -1,6 +1,9 @@
 const theatreController = require('../controllers/theatre.controllers');
 const theatreMiddleware = require('../middlewares/theatre.middlewares');
+<<<<<<< HEAD
 const authMiddleware = require('../middlewares/auth.middlewares');
+=======
+>>>>>>> master
 
 
 const routes = (app) => {
@@ -16,7 +19,10 @@ const routes = (app) => {
     // DELETE
     app.delete(
         '/mba/api/v1/theatre/:id',
+<<<<<<< HEAD
         authMiddleware.isAuthenticated,
+=======
+>>>>>>> master
         theatreController.destroy
     );
 
@@ -44,6 +50,7 @@ const routes = (app) => {
         theatreController.update
     );
     
+<<<<<<< HEAD
     //
     app.patch(
         '/mba/api/v1/theatre/:id/movies',
@@ -62,6 +69,8 @@ const routes = (app) => {
         '/mba/api/v1/theatre/:theatreId/movies/:movieId',
         theatreController.checkMovie
     );
+=======
+>>>>>>> master
 }
 
 module.exports = routes;
