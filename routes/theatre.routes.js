@@ -9,6 +9,7 @@ const routes = (app) => {
     //CREATE
     app.post(
         '/mba/api/v1/theatre',
+        authMiddleware.isAuthenticated,
         theatreMiddleware.validateTheatreCreateRequest,
         theatreController.create
     );
@@ -44,7 +45,7 @@ const routes = (app) => {
         theatreController.update
     );
     
-<<<<<<< HEAD
+
     //
     app.patch(
         '/mba/api/v1/theatre/:id/movies',
@@ -63,8 +64,7 @@ const routes = (app) => {
         '/mba/api/v1/theatre/:theatreId/movies/:movieId',
         theatreController.checkMovie
     );
-=======
->>>>>>> master
+
 }
 
 module.exports = routes;
