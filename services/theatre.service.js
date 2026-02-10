@@ -1,8 +1,5 @@
 const Theatre = require('../models/theatre.model');
-<<<<<<< HEAD
 const Movie = require('../models/movie.model');
-=======
->>>>>>> master
 
 /**
  * 
@@ -90,14 +87,11 @@ const getAllTheatre = async (data) => {
             //this checks wheather name is present in query params or not
             query.name = data.name;
         }
-<<<<<<< HEAD
 
         if(data && data.movieId) {
             query.movies = {$all: data.movieId};
         }
 
-=======
->>>>>>> master
         if(data && data.limit) {
             pagination.limit = data.limit;
         }
@@ -147,7 +141,6 @@ const updateTheatre = async (id , data) => {
     }
 }
 
-<<<<<<< HEAD
 /**
  * 
  * @param  theatreId -> unique id of the theatre for which we want to update movies
@@ -220,8 +213,6 @@ const checkMovieInTheatre = async (theatreId, movieId) => {
         throw error;
     }
 }
-=======
->>>>>>> master
 
 
 module.exports = {
@@ -230,10 +221,7 @@ module.exports = {
     getTheatre,
     getAllTheatre,
     updateTheatre,
-<<<<<<< HEAD
     updateMoviesInTheatres,
     getMoviesInTheatre,
     checkMovieInTheatre,
-=======
->>>>>>> master
 }
