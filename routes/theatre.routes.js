@@ -10,6 +10,7 @@ const routes = (app) => {
     app.post(
         '/mba/api/v1/theatre',
         authMiddleware.isAuthenticated,
+        authMiddleware.isAdminOrClient,
         theatreMiddleware.validateTheatreCreateRequest,
         theatreController.create
     );
