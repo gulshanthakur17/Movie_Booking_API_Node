@@ -56,10 +56,10 @@ const getAllTheatre = async (req , res) => {
         const response = await theatreService.getAllTheatre(req.query);
         successResponseBody.data = response;
         successResponseBody.message = "Successfully fetched all the theatre";
-        return res.status(200).json(successResponseBody);
+        return res.status(STATUS_CODES.OK).json(successResponseBody);
     } catch (error) {
         errorResponseBody.err = error;
-        return res.status(500).json(errorResponseBody);
+        return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json(errorResponseBody);
     }
 }
 
