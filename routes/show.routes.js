@@ -15,7 +15,22 @@ const routes = (app) => {
     app.get(
         '/mba/api/v1/shows',
         showController.getShows
-    )
+    );
+
+    app.delete(
+        '/mba/api/v1/shows/:id',
+        authMiddleware.isAuthenticated,
+        authMiddleware.isAdminOrClient,
+        showController.destroy
+    );
+
+    app.patch(
+        '/mba/api/v1/shows/:id',
+        authMiddleware.isAuthenticated,
+        authMiddleware.isAdminOrClient,
+        showMiddleware.validateShowUpdateRequest,
+        showController.update
+    );
 }
 
 
