@@ -7,7 +7,7 @@ const createUser = async (data) => {
             if(data.userStatus && data.userStatus != USER_STATUS.approved) {
                 throw {
                     err: 'We cannot set any other status for customer',
-                    code: 400
+                    code: STATUS_CODES.BAD_REQUEST
                 };
             }
         }
@@ -25,7 +25,7 @@ const createUser = async (data) => {
             Object.keys(error.errors).forEach((key) => {
                 err[key] = error.errors[key].message;
             });
-            throw {err: err, code: 422};
+            throw {err: err, code: STATUS_CODES.UNPROCESSABLE_ENTITY};
         }
         throw error;
     }
@@ -37,7 +37,7 @@ const getUserByEmail = async (email) => {
             email: email
         });
         if(!response) {
-            throw {err: 'No user found for the given email', code :404};
+            throw {err: 'No user found for the given email', code : STATUS_CODES.NOT_FOUND};
         }
         return response;
     } catch (error) {
@@ -50,7 +50,7 @@ const getUserById = async (id) => {
     try {
         const user = await User.findById(id);
         if(!user) {
-            throw {err: 'No user found for the given id', code: 404};
+            throw {err: 'No user found for the given id', code: STATUS_CODES.NOT_FOUND};
         }
         return user;
     } catch (error) {
