@@ -35,7 +35,33 @@ const update = async (req, res) => {
     }
 }
 
+const getBookings = async (req, res, next) => {
+    try {
+        const response = await bookingService.getBookings({userId: req.user});
+        successResponseBody.data = response;
+        successResponseBody.message = 'Successfully fetched the bookings';
+        return res.status(STATUS_CODES.OK).json(successResponseBody);
+    } catch (error) {
+        errorResponseBody.err = error;
+        return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json(errorResponseBody);
+    }
+}
+
+const getAllBookings = async (req, res, next) => {
+    try {
+        const response = await bookingService.getAllBookings();
+        successResponseBody.data = response;
+        successResponseBody.message = 'Successfully fetched the bookings';
+        return res.status(STATUS_CODES.OK).json(successResponseBody);
+    } catch (error) {
+        errorResponseBody.err = error;
+        return res.status(STATUS_CODES.INTERNAL_SERVER_ERROR).json(errorResponseBody);
+    }
+}
+
 module.exports = {
     create,
     update,
+    getBookings,
+    getAllBookings,
 }
