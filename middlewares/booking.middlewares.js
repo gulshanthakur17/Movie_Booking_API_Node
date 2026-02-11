@@ -41,7 +41,7 @@ const validateBookingCreateRequest = async (req, res, next) => {
     }
 
     //validate presense of timings
-    if(!req.body.timings) {
+    if(!req.body.timing) {
         errorResponseBody.err = 'No movie timing passed';
         return res.status(STATUS_CODES.BAD_REQUEST).json(errorResponseBody);
     }

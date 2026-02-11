@@ -19,7 +19,7 @@ const bookingSchema = new mongoose.Schema({
         required: true,
         ref: 'User'
     },
-    timings: {
+    timing: {
         type: String,
         required: true
     },
@@ -28,7 +28,8 @@ const bookingSchema = new mongoose.Schema({
         required: true,
     },
     totalCost: {
-        type: Number
+        type: Number,
+        required: true
     },
     status: {
         type: String,
