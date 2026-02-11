@@ -8,6 +8,9 @@ const MovieRoutes = require('./routes/movie.routes');
 const TheatreRoutes = require('./routes/theatre.routes');
 const AuthRoutes = require('./routes/auth.routes');
 const UserRoutes = require('./routes/user.routes');
+const BookingRoutes = require('./routes/booking.routes');
+const ShowRoutes = require('./routes/show.routes');
+const PaymentRoutes = require('./routes/payment.routes');
 
 env.config();
 const app = express(); // express app object
@@ -22,6 +25,9 @@ MovieRoutes(app); //invoking movie routes
 TheatreRoutes(app);// invoking theatre routes
 AuthRoutes(app); // invoking auth routes
 UserRoutes(app); //invoking user routes
+BookingRoutes(app);//invoking booking routes
+ShowRoutes(app); //invoking show routes
+PaymentRoutes(app); //invoking payment routes
 
 
 app.listen(process.env.PORT, async () => {
