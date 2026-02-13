@@ -5,7 +5,7 @@
 [![Node.js](https://img.shields.io/badge/Node.js-18.x-green.svg)](https://nodejs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-green.svg)](https://www.mongodb.com/)
 [![Express](https://img.shields.io/badge/Express-5.2.1-blue.svg)](https://expressjs.com/)
-[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 
   
 **Notification Service:** [Repo Link](https://github.com/yourusername/notification-service)
