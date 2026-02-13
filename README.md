@@ -438,12 +438,3 @@ movie-booking-backend/
 5. Open Pull Request
 
 ---
-
-## 🔗 Related Projects
-
-- [Notification Service](https://github.com/gulshanthakur17/NotificationService) - Email notification microservice
-
-
----
-
-**Built with ❤️ using Node.js, Express, and MongoDB**
